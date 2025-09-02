@@ -1,0 +1,34 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Floorplan MVP</title>
+  <style>
+    body{ font-family: Arial, sans-serif; margin: 12px; }
+    #canvas{ border:1px solid #ccc; width:800px; height:500px; position:relative; background:#f9f9f9; }
+    .room, .seat{ position:absolute; border-radius:6px; padding:6px; background:rgba(50,150,250,0.15); border:1px solid rgba(50,150,250,0.3); cursor:move; }
+    .seat{ background:rgba(100,200,100,0.12); border:1px dashed rgba(100,200,100,0.3); }
+    #controls{ margin-top:10px; }
+    .badge{ display:inline-block; padding:4px 8px; background:#eee; border-radius:4px; margin-right:6px; }
+    #offlineIndicator{ font-weight:bold; color: red; }
+  </style>
+</head>
+<body>
+  <h2>Floorplan MVP — Simple Admin</h2>
+  <div>Offline indicator: <span id="offlineIndicator">?</span> | <button id="syncBtn">Sync Now</button></div>
+  <div id="controls">
+    <button id="addSeat">Add Seat</button>
+    <button id="addRoom">Add Room</button>
+    <label>Participants: <input id="participants" type="number" value="3" style="width:60px" /></label>
+    <button id="suggestBtn">Suggest Rooms</button>
+  </div>
+  <div id="canvas"></div>
+  <h3>Op Queue (localStorage)</h3>
+  <pre id="queuePre" style="background:#fafafa;padding:8px;border:1px solid #eee;max-height:200px;overflow:auto"></pre>
+  <h3>Suggestions</h3>
+  <pre id="suggestionsPre" style="background:#fafafa;padding:8px;border:1px solid #eee"></pre>
+
+<script src="app.js"></script>
+</body>
+</html>
